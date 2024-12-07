@@ -1,9 +1,11 @@
 ARG BUILD_FROM
+# hadolint ignore=DL3006
 FROM $BUILD_FROM
 
 ENV LANG C.UTF-8
 
 # Install required packages in a single layer
+# hadolint ignore=DL3018 
 RUN apk add --no-cache \
     python3 \
     py3-pip \
