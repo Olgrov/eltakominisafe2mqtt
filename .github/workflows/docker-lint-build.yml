@@ -14,7 +14,7 @@ jobs:
     steps:
       # Checkout repository
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Run hadolint
       - name: Run Hadolint
@@ -30,7 +30,7 @@ jobs:
     steps:
       # Checkout repository
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Build image
       - name: Test build
@@ -39,5 +39,4 @@ jobs:
           args: |
             --test \
             --all \
-            --target addon-folder \
-            --docker-hub user-name-or-space-name
+            --target addon-folder
