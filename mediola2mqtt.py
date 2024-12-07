@@ -325,6 +325,7 @@ try:
 except:
     print('Error connecting to MQTT, will now quit.')
     sys.exit(1)
+print(f'Connected to mqtt server {config['mqtt']['host']}:{config['mqtt']['port']}')
 mqttc.loop_start()
 
 listen_port = 1902
