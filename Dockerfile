@@ -3,14 +3,20 @@ FROM $BUILD_FROM
 
 ENV LANG C.UTF-8
 
-RUN apk add --no-cache python3
-RUN apk add py3-pip
-RUN apk add py3-paho-mqtt
-RUN apk add py3-requests
-RUN apk add py3-yaml
+# Install required packages in a single layer
+RUN apk add --no-cache \
+    python3 \
+    py3-pip \
+    py3-paho-mqtt \
+    py3-requests \
+    py3-yaml
 
+# Copy application files
 COPY mediola2mqtt.py /
 COPY run.sh /
+
+# Make the entrypoint script executable
 RUN chmod a+x /run.sh
 
+# Set the entrypoint command
 CMD [ "/run.sh" ]
