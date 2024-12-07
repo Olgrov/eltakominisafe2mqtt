@@ -5,9 +5,9 @@ ENV LANG C.UTF-8
 
 RUN apk add --no-cache python3
 RUN apk add py3-pip
-RUN pip3 install paho-mqtt
-RUN pip3 install requests
-RUN pip3 install PyYAML
+RUN apk add py3-paho-mqtt
+RUN apk add py3-requests
+RUN apk add py3-yaml
 
 COPY mediola2mqtt.py /
 COPY run.sh /
