@@ -45,7 +45,7 @@
       },
       "blinds": [
         {
-        "type": "match(ER|RT)?",
+        "type": "match(ER|RT|ENOCEAN)?",
         "adr": "str?",
         "name": "str?"
         }
